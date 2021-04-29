@@ -5,7 +5,7 @@ package leetcode
 
 
 fun main() {
-    `4SumSolution`().fourSum(intArrayOf(1,0,-1,0,-2,2), 0)
+    `4SumSolution`().fourSum(intArrayOf(2,2,2,2,2), 8)
 }
 
 class `4SumSolution` {
@@ -22,6 +22,9 @@ class `4SumSolution` {
             if (i > 0 && nums[i] == nums[i - 1]) continue
 
             for (j in (i + 1)..nums.size - 3) {
+                if (nums[j] + nums[i] * 3 > target) break
+                if (j > i + 1 && nums[j] == nums[j - 1]) continue
+
                 var low = j + 1
                 var high = nums.size - 1
                 val forTarget = target - nums[i] - nums[j]
@@ -46,6 +49,6 @@ class `4SumSolution` {
             }
         }
 
-        return sumList.distinct()
+        return sumList
     }
 }
