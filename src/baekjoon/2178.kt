@@ -13,12 +13,10 @@ fun main() = with(System.`in`.bufferedReader()) {
     val matrix = Array(N + 1) { IntArray(M + 1) { 0 } }
 
     for (i in 1..N) {
-        val col = readLine().split("")
-            .filter { it.isNotBlank() }
-            .map { it.toInt() }
+        val col = readLine()
 
         for (j in 0 until M) {
-            matrix[i][j+1] = col[j]
+            matrix[i][j+1] = col[j].toString().toInt()
         }
     }
 
