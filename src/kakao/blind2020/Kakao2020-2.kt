@@ -1,4 +1,4 @@
-package kakao
+package kakao.blind2020
 
 // 카카오 2020 괄호 변환 문제
 // https://programmers.co.kr/learn/courses/30/lessons/60058
