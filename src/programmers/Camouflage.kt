@@ -6,8 +6,6 @@ package programmers
  * https://programmers.co.kr/learn/courses/30/lessons/42578
  */
 
-import java.util.*
-
 fun main() {
     val answer = CamouflageSolution().solution(
         arrayOf(
@@ -21,19 +19,9 @@ fun main() {
 
 class CamouflageSolution {
 
-    fun solution(clothes: Array<Array<String>>): Int {
-        var answer = 1
-
-        val clothesMap: MutableMap<String, Int> = HashMap()
-
-        for (i in clothes.indices) {
-            clothesMap[clothes[i][1]] = clothesMap.getOrDefault(clothes[i][1], 0) + 1
-        }
-
-        for (i in clothesMap.values) {
-            answer *= i + 1
-        }
-
-        return answer - 1
-    }
+    fun solution(clothes: Array<Array<String>>) = clothes
+        .groupBy { it[1] }.values
+        .map { it.size + 1 }
+        .reduce(Int::times)
+        .minus(1)
 }
