@@ -1,4 +1,4 @@
-package kakao
+package kakao.blind2020
 
 // 카카오 2020 문자 압축 문제
 // https://programmers.co.kr/learn/courses/30/lessons/60058
@@ -22,5 +22,5 @@ fun main() {
         }.joinToString("").length
     }
 
-    println("answer: ${a.min()!!}")
+    println("answer: ${a.minOrNull()!!}")
 }
